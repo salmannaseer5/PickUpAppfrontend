@@ -4,13 +4,8 @@ import { Redirect } from 'react-router'
 
 // constants
 // change to actual routes from Pickup-app-API
-<<<<<<< HEAD
 const backendBaseUrl = 'http://localhost:8000/api/orders';
 const postEndpoint = '/api/post/newOrder';
-=======
-const backendBaseUrl = 'http://localhost:8000';
-const postEndpoint = '/api/orders';
->>>>>>> 68287d2ae0927c78662e9e596ca274b4b0e7bc58
 
 class NewOrder extends Component {
     constructor(props){
