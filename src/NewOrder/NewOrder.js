@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
+import { Redirect } from 'react-router'
 
 // constants
 // change to actual routes from Pickup-app-API
@@ -14,7 +15,8 @@ class NewOrder extends Component {
             email: '',
             pickUpAddress: '',
             dropOffAddress: '',
-            time: ''
+            time: '',
+            redirect: false
         }
 
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -62,13 +64,19 @@ class NewOrder extends Component {
                 dropOffAddress: this.state.dropOffAddress, 
                 time: this.state.time
             }
-        });
+            // do we need to save to api here?
+        }).then(() => this.setState({redirect: true}));
         event.preventDefault();
     }
 
     // handleClearForm
 
   render() {
+      
+      if (this.state.redirect === true) {
+        return <Redirect to='/order' />
+      }
+
     return (
         <form onSubmit={this.handleSubmit}>
             <h1>New Order</h1>
@@ -84,3 +92,29 @@ class NewOrder extends Component {
 }
 
 export default NewOrder;
+
+
+// example from https://tylermcginnis.com/react-router-programmatically-navigate/
+// class Register extends React.Component {
+//     state = {
+//       toDashboard: false,
+//     }
+//     handleSubmit = (user) => {
+//       saveUser(user)
+//         .then(() => this.setState(() => ({
+//           toDashboard: true
+//         })))
+//     }
+//     render() {
+//       if (this.state.toDashboard === true) {
+//         return <Redirect to='/dashboard' />
+//       }
+  
+//       return (
+//         <div>
+//           <h1>Register</h1>
+//           <Form onSubmit={this.handleSubmit} />
+//         </div>
+//       )
+//     }
+//   }
