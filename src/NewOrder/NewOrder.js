@@ -4,8 +4,8 @@ import { Redirect } from 'react-router'
 
 // constants
 // change to actual routes from Pickup-app-API
-const backendBaseUrl = 'https://PLACEHOLDER.com';
-const postEndpoint = '/api/post/newOrder';
+const backendBaseUrl = 'http://localhost:8000';
+const postEndpoint = '/api/orders';
 
 class NewOrder extends Component {
     constructor(props){
@@ -61,7 +61,7 @@ class NewOrder extends Component {
                 name: this.state.name, 
                 email: this.state.email, 
                 pickUpAddress: this.state.pickUpAddress, 
-                dropOffAddress: this.state.dropOffAddress, 
+                dropOffAddress: this.state.dropOffAddress,
                 time: this.state.time
             }
             // do we need to save to api here?
