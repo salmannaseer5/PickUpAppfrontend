@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios'; 
+
+// constants
+// change to actual routes from Pickup-app-API
+const backendBaseUrl = 'https://PLACEHOLDER.com';
+const postEndpoint = '/api/post/newOrder';
 
 class NewOrder extends Component {
     constructor(props){
@@ -23,6 +29,10 @@ class NewOrder extends Component {
         this.setState({name: event.target.value});
     }
 
+    // handleNameChange = (event) => {
+    //     this.setState({name: event.target.value});
+    // }
+
     handleEmailChange(event) {
         this.setState({email: event.target.value});
     }
@@ -41,6 +51,18 @@ class NewOrder extends Component {
 
     handleSubmit(event) {
         alert('Thank you for your order ' + this.state.name + '!');
+        // Send a POST request
+        axios({
+            method: 'post',
+            url: backendBaseUrl + postEndpoint,
+            data: {
+                name: this.state.name, 
+                email: this.state.email, 
+                pickUpAddress: this.state.pickUpAddress, 
+                dropOffAddress: this.state.dropOffAddress, 
+                time: this.state.time
+            }
+        });
         event.preventDefault();
     }
 
