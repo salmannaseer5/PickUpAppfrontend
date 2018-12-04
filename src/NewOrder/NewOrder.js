@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // constants
 // change to actual routes from Pickup-app-API
-const backendBaseUrl = 'https://PLACEHOLDER.com';
+const backendBaseUrl = 'http://localhost:8000/api/orders';
 const postEndpoint = '/api/post/newOrder';
 
 class NewOrder extends Component {
@@ -14,7 +14,8 @@ class NewOrder extends Component {
             email: '',
             pickUpAddress: '',
             dropOffAddress: '',
-            time: ''
+            time: '',
+            driver: ''
         }
 
         this.handleNameChange = this.handleNameChange.bind(this);
