@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NewOrder from '../NewOrder/NewOrder.js'
-import ViewOrder from '../ViewOrder/ViewOrder.js'
+import SearchOrder from '../SearchOrder/SearchOrder.js'
 
 class Home extends Component {
   render() {
@@ -8,7 +8,7 @@ class Home extends Component {
       <div>
         <NewOrder/>
         <h2>or</h2>
-        <ViewOrder/>
+        <SearchOrder/>
       </div>
     );
   }
