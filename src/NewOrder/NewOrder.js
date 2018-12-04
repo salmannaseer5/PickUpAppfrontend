@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
+import { Redirect } from 'react-router'
 
 // constants
 // change to actual routes from Pickup-app-API
+<<<<<<< HEAD
 const backendBaseUrl = 'http://localhost:8000/api/orders';
 const postEndpoint = '/api/post/newOrder';
+=======
+const backendBaseUrl = 'http://localhost:8000';
+const postEndpoint = '/api/orders';
+>>>>>>> 68287d2ae0927c78662e9e596ca274b4b0e7bc58
 
 class NewOrder extends Component {
     constructor(props){
@@ -15,7 +21,11 @@ class NewOrder extends Component {
             pickUpAddress: '',
             dropOffAddress: '',
             time: '',
+<<<<<<< HEAD
             driver: ''
+=======
+            redirect: false
+>>>>>>> 68287d2ae0927c78662e9e596ca274b4b0e7bc58
         }
 
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -60,16 +70,22 @@ class NewOrder extends Component {
                 name: this.state.name, 
                 email: this.state.email, 
                 pickUpAddress: this.state.pickUpAddress, 
-                dropOffAddress: this.state.dropOffAddress, 
+                dropOffAddress: this.state.dropOffAddress,
                 time: this.state.time
             }
-        });
+            // do we need to save to api here?
+        }).then(() => this.setState({redirect: true}));
         event.preventDefault();
     }
 
     // handleClearForm
 
   render() {
+      
+      if (this.state.redirect === true) {
+        return <Redirect to='/order' />
+      }
+
     return (
         <form onSubmit={this.handleSubmit}>
             <h1>New Order</h1>
@@ -85,3 +101,29 @@ class NewOrder extends Component {
 }
 
 export default NewOrder;
+
+
+// example from https://tylermcginnis.com/react-router-programmatically-navigate/
+// class Register extends React.Component {
+//     state = {
+//       toDashboard: false,
+//     }
+//     handleSubmit = (user) => {
+//       saveUser(user)
+//         .then(() => this.setState(() => ({
+//           toDashboard: true
+//         })))
+//     }
+//     render() {
+//       if (this.state.toDashboard === true) {
+//         return <Redirect to='/dashboard' />
+//       }
+  
+//       return (
+//         <div>
+//           <h1>Register</h1>
+//           <Form onSubmit={this.handleSubmit} />
+//         </div>
+//       )
+//     }
+//   }

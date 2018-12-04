@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from '../Home/Home.js';
+import ShowOrder from '../ShowOrder/ShowOrder.js';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         </header>
         <main>
         <Route exact path="/" component={Home}/>
+        <Route exact path="/order" component={ShowOrder}/>
         </main>
       </div>
     );
