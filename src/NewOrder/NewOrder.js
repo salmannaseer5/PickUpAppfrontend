@@ -44,6 +44,8 @@ class NewOrder extends Component {
         event.preventDefault();
     }
 
+    // handleClearForm
+
   render() {
     return (
         <form onSubmit={this.handleSubmit}>
