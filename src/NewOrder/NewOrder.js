@@ -17,8 +17,12 @@ class NewOrder extends Component {
             dropOffAddress: '',
             time: '',
 <<<<<<< HEAD
+<<<<<<< HEAD
             driver: ''
 =======
+=======
+            id: '',
+>>>>>>> 40a70b992b6e0e49b2e46b7f4143b749563677b7
             redirect: false
 >>>>>>> 68287d2ae0927c78662e9e596ca274b4b0e7bc58
         }
@@ -34,10 +38,6 @@ class NewOrder extends Component {
     handleNameChange(event) {
         this.setState({name: event.target.value});
     }
-
-    // handleNameChange = (event) => {
-    //     this.setState({name: event.target.value});
-    // }
 
     handleEmailChange(event) {
         this.setState({email: event.target.value});
@@ -68,17 +68,21 @@ class NewOrder extends Component {
                 dropOffAddress: this.state.dropOffAddress,
                 time: this.state.time
             }
-            // do we need to save to api here?
-        }).then(() => this.setState({redirect: true}));
+            // have access to data created
+        })
+        .then((dataResult) => this.setState({id: dataResult.data._id}))
+        // .then((dataResult) => console.log(this.state.id))
+        .then(() => this.setState({redirect: true}));
         event.preventDefault();
     }
 
-    // handleClearForm
+    
+    // handleClearForm needed?
 
   render() {
       
       if (this.state.redirect === true) {
-        return <Redirect to='/order' />
+        return <Redirect to={'/order/' + this.state.id} />
       }
 
     return (
@@ -96,29 +100,3 @@ class NewOrder extends Component {
 }
 
 export default NewOrder;
-
-
-// example from https://tylermcginnis.com/react-router-programmatically-navigate/
-// class Register extends React.Component {
-//     state = {
-//       toDashboard: false,
-//     }
-//     handleSubmit = (user) => {
-//       saveUser(user)
-//         .then(() => this.setState(() => ({
-//           toDashboard: true
-//         })))
-//     }
-//     render() {
-//       if (this.state.toDashboard === true) {
-//         return <Redirect to='/dashboard' />
-//       }
-  
-//       return (
-//         <div>
-//           <h1>Register</h1>
-//           <Form onSubmit={this.handleSubmit} />
-//         </div>
-//       )
-//     }
-//   }
