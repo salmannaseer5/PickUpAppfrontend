@@ -18,7 +18,7 @@ class App extends Component {
         </header>
         <main>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/order" component={ShowOrder}/>
+        <Route exact path="/order/:id" component={ShowOrder}/>
         </main>
       </div>
     );
