@@ -36,7 +36,7 @@ class ShowOrder extends Component {
                     <h2>Confirmation Number: {order._id}</h2>
                     <h2>Pickup Address: {order.pickUpAddress}</h2>
                     <h2>Order number: {order.dropOffAddress}</h2>
-                    <h3>A confirmation letter will be sent to {order.email}</h3>
+                    <h3>A confirmation email will be sent to {order.email}</h3>
                 </div>
     
             );
