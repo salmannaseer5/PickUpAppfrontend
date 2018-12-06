@@ -3,9 +3,8 @@ import axios from 'axios';
 import { Redirect } from 'react-router'
 
 // constants
-// change to actual routes from Pickup-app-API
-const backendBaseUrl = 'http://localhost:8000/api/orders';
-const postEndpoint = '/api/post/newOrder';
+const backendBaseUrl = 'http://localhost:8000';
+const postEndpoint = '/api/orders';
 
 class NewOrder extends Component {
     constructor(props){
@@ -16,15 +15,9 @@ class NewOrder extends Component {
             pickUpAddress: '',
             dropOffAddress: '',
             time: '',
-<<<<<<< HEAD
-<<<<<<< HEAD
             driver: ''
-=======
-=======
             id: '',
->>>>>>> 40a70b992b6e0e49b2e46b7f4143b749563677b7
             redirect: false
->>>>>>> 68287d2ae0927c78662e9e596ca274b4b0e7bc58
         }
 
         this.handleNameChange = this.handleNameChange.bind(this);
@@ -71,13 +64,10 @@ class NewOrder extends Component {
             // have access to data created
         })
         .then((dataResult) => this.setState({id: dataResult.data._id}))
-        // .then((dataResult) => console.log(this.state.id))
         .then(() => this.setState({redirect: true}));
         event.preventDefault();
     }
 
-    
-    // handleClearForm needed?
 
   render() {
       

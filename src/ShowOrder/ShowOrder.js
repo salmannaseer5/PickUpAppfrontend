@@ -1,38 +1,55 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
-// const backendBaseUrl = 'http://localhost:8000';
-// const postEndpoint = '/api/orders';
-
+const backendBaseUrl = 'http://localhost:8000';
+const postEndpoint = '/api/orders';
 
 class ShowOrder extends Component {
 
-    // componentDidMount() {
-    //     const id = this.props.match.params.id//grab id from new path
-    //     const yarn = this.props.list.filter(one => one.id === id)// find matching id in data
-    //     console.log(yarn)
-    //     axios.get(backendBaseUrl + postEndpoint)
-    //         .then(response => {
-    //             let yarn = response.data// gets data returned as an object
-    //             this.props.setShowOrder(yarn)//sets state of yarn(App) 
-    //             console.log(yarn)
-    //         })
-    //         .catch(err => {
-    //             console.error(err)
-    //         })
+    constructor(props){
+        super(props);
+        this.state = {
+            orderArray: []
+        }
+    }
 
-    // }
+    componentDidMount(){
 
-  render() {
+        axios({
+            method:'get',
+            url: backendBaseUrl + postEndpoint
+            })
+            .then((orderArray) => this.setState({orderArray: orderArray.data}))
+    }
 
-    return (
-        <form>
-            <h2>Order Number:</h2>
-            <h2>{this.props.match.params.id} </h2>
-            
-      </form>
-    );
-  }
+    render() {
+        let orderList = this.state.orderArray
+        let orderResult = orderList.filter( order => order._id === this.props.match.params.id)
+        let order = orderResult[0]
+        console.log(order)
+
+        if(typeof order != "undefined"){
+            return (    
+                
+                <div>
+                    <h1>Thank you for yor order, {order.name}!</h1>
+                    <h2>Confirmation Number: {order._id}</h2>
+                    <h2>Pickup Address: {order.pickUpAddress}</h2>
+                    <h2>Order number: {order.dropOffAddress}</h2>
+                    <h3>A confirmation letter will be sent to {order.email}</h3>
+                </div>
+    
+            );
+          } else {
+              return (
+                  <h1>order empty</h1>
+              )
+            } 
+
+    }
+
 }
 
+
 export default ShowOrder;
+
