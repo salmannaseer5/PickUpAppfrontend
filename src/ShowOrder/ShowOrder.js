@@ -4,8 +4,8 @@ import { Redirect } from 'react-router';
 
 
 
-// const backendBaseUrl = 'http://localhost:8000';
-const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
+const backendBaseUrl = 'http://localhost:8000';
+// const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
 const postEndpoint = '/api/orders';
 
 class ShowOrder extends Component {
@@ -21,9 +21,13 @@ class ShowOrder extends Component {
     }
 
     handleDeleteOrder = event => {
-
+        console.log('delete')
         axios.delete(backendBaseUrl + postEndpoint + "/" + this.props.match.params.id)
-        .then(() => this.setState({redirect: true}))
+        .then(() =>{
+            console.log('delete fun ction')
+            this.setState({redirect: true})
+
+        })
 
         //   .then(res => {
         //     console.log(res);
@@ -46,8 +50,9 @@ class ShowOrder extends Component {
     }
 
     render() {
+        const { redirect } = this.state;
 
-        if (this.state.redirect === true) {
+        if (redirect) {
             return <Redirect to={'/confirm'} />
         }
 

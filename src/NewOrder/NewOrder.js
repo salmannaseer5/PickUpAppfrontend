@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Redirect } from 'react-router'
 
 // constants
-// const backendBaseUrl = 'http://localhost:8000';
-const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
+const backendBaseUrl = 'http://localhost:8000';
+// const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
 const postEndpoint = '/api/orders';
 
 class NewOrder extends Component {
