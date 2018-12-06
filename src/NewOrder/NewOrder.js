@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './NewOrder.css'
 import axios from 'axios';
 import { Redirect } from 'react-router'
 
@@ -75,15 +76,31 @@ class NewOrder extends Component {
       }
 
     return (
-        <form onSubmit={this.handleSubmit}>
+        <div className="neworder-div">
+        <form className="form-inline" onSubmit={this.handleSubmit}>
             <h1>New Order</h1>
-            <input type="text" value={this.state.name} onChange={this.handleNameChange} placeholder="name" />
-            <input type="text" value={this.state.email} onChange={this.handleEmailChange} placeholder="email" />
-            <input type="text" value={this.state.pickUpAddress} onChange={this.handlePickUpAddressChange} placeholder="pickup address" />
-            <input type="text" value={this.state.dropOffAddress} onChange={this.handleDropOffAddressChange} placeholder="dropoff address" />
-            <input type="text" value={this.state.time} onChange={this.handleTimeChange} placeholder="time" />
-            <input type="submit" value="place order" />
+            <div className="newOrder">
+            <div className="orderInput">
+            <input className="form-control" type="text" value={this.state.name} onChange={this.handleNameChange} placeholder="Name" />
+            </div>
+            <div className="orderInput">
+            <input className="form-control" type="text" value={this.state.email} onChange={this.handleEmailChange} placeholder="email" />
+            </div>
+            <div className="orderInput">
+            <input className="form-control" type="text" value={this.state.pickUpAddress} onChange={this.handlePickUpAddressChange} placeholder="Pickup Address" />
+            </div>
+            <div className="orderInput">
+            <input className="form-control" type="text" value={this.state.dropOffAddress} onChange={this.handleDropOffAddressChange} placeholder="Dropoff Address" />
+            </div>
+            <div className="orderInput">
+            <input className="form-control" type="text" value={this.state.time} onChange={this.handleTimeChange} placeholder="Time" />
+            </div>
+            <div className="orderInput">
+            <input className="placeOrder placeOrder:hover" type="submit" value="Place Order" />
+            </div>
+            </div>
       </form>
+      </div>
     );
   }
 }

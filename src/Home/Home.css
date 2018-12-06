@@ -1,0 +1,14 @@
+.home-order {
+    margin-bottom: 50px;
+    border: 4px solid black inset;
+    
+}
+.home-search {
+    padding: auto;
+    margin-top: 50px;
+}
+.home-div {
+    display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
