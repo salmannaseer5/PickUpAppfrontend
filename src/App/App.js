@@ -3,7 +3,7 @@ import {Route, Link, Switch } from 'react-router-dom';
 import './App.css'
 import Home from '../Home/Home.js';
 import ShowOrder from '../ShowOrder/ShowOrder.js';
-import About from '/About'
+import About from '../About/About.js'
 import Delete from '../Delete/Delete.js'
 
 
