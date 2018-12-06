@@ -4,8 +4,8 @@ import { Redirect } from 'react-router';
 
 
 
-const backendBaseUrl = 'http://localhost:8000';
-// const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
+// const backendBaseUrl = 'http://localhost:8000';
+const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
 const postEndpoint = '/api/orders';
 
 class ShowOrder extends Component {
