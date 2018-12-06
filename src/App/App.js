@@ -10,9 +10,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav>
+      <nav>
       <Link className="home-app" to="/">PickUp App</Link>
-      <Link to="../About/About">About</Link>
+      <Link className="about-page" to="/About">About</Link>
       </nav>
       <main>
         <Switch>
@@ -20,7 +20,7 @@ class App extends Component {
                   component={Home}/>
           <Route  path="/order/:id" 
                   component={ShowOrder}/>
-          <Route  path="../About/About" 
+          <Route  path="/About" 
                   component={About}/>
         </Switch>
       </main>
