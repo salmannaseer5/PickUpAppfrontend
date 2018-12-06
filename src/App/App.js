@@ -3,7 +3,9 @@ import {Route, Link, Switch } from 'react-router-dom';
 import './App.css'
 import Home from '../Home/Home.js';
 import ShowOrder from '../ShowOrder/ShowOrder.js';
-import About from '../About/About'
+import About from '/About'
+import Delete from '../Delete/Delete.js'
+
 
 
 class App extends Component {
@@ -16,12 +18,14 @@ class App extends Component {
       </nav>
       <main>
         <Switch>
-          <Route  path="/" exact
+          <Route  exact path="/"
                   component={Home}/>
-          <Route  path="/order/:id" 
+          <Route  exact path="/order/:id" 
                   component={ShowOrder}/>
-          <Route  path="../About/About" 
+          <Route  exact path="/About" 
                   component={About}/>
+          <Route exact path="/confirm" 
+                  component={Delete}/>
         </Switch>
       </main>
       </div>
