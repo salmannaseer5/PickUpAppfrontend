@@ -17,7 +17,6 @@ class SearchOrder extends Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.id);
     this.setState({redirect: true});
     event.preventDefault();
   }
