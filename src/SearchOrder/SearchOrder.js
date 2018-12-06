@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchOrder.css'
 import { Redirect } from 'react-router'
 
 class SearchOrder extends Component {
@@ -28,13 +29,17 @@ class SearchOrder extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className="searchOrder-div">
+      <form className="form-inline" onSubmit={this.handleSubmit}>
         <h2>
             Order Number
         </h2>
-        <input type="text" value={this.state.id} onChange={this.handleIdChange} placeholder="order number" />
-        <input type="submit" value="view order" />
+        <div className="search-form">
+        <input className="form-control" type="text" value={this.state.id} onChange={this.handleIdChange} placeholder="Search" aria-label="Search"/>
+        </div>
+        <button class="btn btn:hover" type="submit">Search</button>
       </form>
+      </div>
     );
   }
 }
