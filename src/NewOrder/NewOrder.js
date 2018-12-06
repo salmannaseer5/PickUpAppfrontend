@@ -15,7 +15,6 @@ class NewOrder extends Component {
             pickUpAddress: '',
             dropOffAddress: '',
             time: '',
-            driver: ''
             id: '',
             redirect: false
         }
