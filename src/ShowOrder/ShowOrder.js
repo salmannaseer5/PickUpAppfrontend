@@ -63,6 +63,7 @@ class ShowOrder extends Component {
                     <h2>Confirmation Number: {order._id}</h2>
                     <h2>Pickup Address: {order.pickUpAddress}</h2>
                     <h2>Dropoff Address: {order.dropOffAddress}</h2>
+                    <h2>Pickup Time: {order.time}</h2>
                     <h3>A confirmation email will be sent to {order.email}</h3>
                     <form onSubmit={this.handleDeleteOrder}>
                         <input type="submit" value="cancel order"></input>
