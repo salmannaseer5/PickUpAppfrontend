@@ -62,7 +62,6 @@ class NewOrder extends Component {
                 dropOffAddress: this.state.dropOffAddress,
                 time: this.state.time
             }
-            // have access to data created
         })
         .then((dataResult) => this.setState({id: dataResult.data._id}))
         .then(() => this.setState({redirect: true}));
