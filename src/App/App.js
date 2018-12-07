@@ -9,11 +9,11 @@ import Delete from '../Delete/Delete.js'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="backgroundImage">
         <header>
       <nav>
-      <Link className="home-app" to="/">PickUp App</Link>
-      <Link className="about-page" to="/about">About</Link>
+      <Link className="home-app" to="/">pickUp</Link>
+      <Link className="about-page" to="/about">about</Link>
       </nav>
       </header>
       <main>
@@ -33,11 +33,11 @@ class App extends Component {
     <div className="row">
       <div className="">
         <div className="mb-5 flex-center">
-          <a href="www.instagram.com" className="fb-ic"> Facebook  </a>||
-          <a href="www.instagram.com" className="tw-ic">Twitter  </a> || 
-          <a href="www.instagram.com" className="gplus-ic">Instagram </a> ||
-          <a href="www.instagram.com" className="li-ic">Linkedin  </a> ||
-          <a href="www.instagram.com" className="ins-ic">Pinterest  </a> ||
+          <a href="#" className="fb-ic"> Facebook  </a>||
+          <a href="#" className="tw-ic">Twitter  </a> || 
+          <a href="#" className="gplus-ic">Instagram </a> ||
+          <a href="#" className="li-ic">Linkedin  </a> ||
+          <a href="#" className="ins-ic">Pinterest  </a> ||
         </div>
       </div>
     </div>

@@ -32,10 +32,10 @@ class SearchOrder extends Component {
       <div className="searchOrder-div">
       <form className="form-inline" onSubmit={this.handleSubmit}>
         <h2>
-            Order Number
+            existing order
         </h2>
         <div className="search-form">
-        <input className="form-control" type="text" value={this.state.id} onChange={this.handleIdChange} placeholder="Search" aria-label="Search"/>
+        <input className="form-control" type="text" value={this.state.id} onChange={this.handleIdChange} placeholder="Order number" aria-label="Search"/>
         </div>
         <button class="btn btn:hover" type="submit">Search</button>
       </form>
