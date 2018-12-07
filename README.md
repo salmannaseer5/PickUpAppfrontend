@@ -1,48 +1,66 @@
 # Pick Up App
 
-The Pick-up app is a tool for riders to schedule a car pick-up to their local destination. The app’s automated dispatch checks a drivers' availability and pairs with a compatible pick-up request. The app notifies drivers and riders that the pick-up has been booked.
+The Pick-up app is a tool for riders to schedule a car pick-up to their local destination. The app’s automated dispatch checks a drivers' availability and pairs with a compatible pick-up request. The app shows riders that the pick-up has been booked.
 
-<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![PickUpApp](https://i.imgur.com/w8Vbyvp.png)
 
-## Available Scripts
+## Team Members
+- Donell Ellis
+- Salman Naseer
+- Tishana Trainor
 
-In the project directory, you can run:
+## Tech Used
 
-### `npm start`
+- Mongoose
+- Express
+- React
+- Node
+- HTML
+- CSS
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Our Approach
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### User Stories
 
-### `npm test`
+* I can create an Order
+* I can view my Order once created, and see:
+⋅⋅1. My Confirmation Number
+⋅⋅2. My Pick Up Location
+⋅⋅3. My Drop Off Location
+⋅⋅4. My Pick Up Time
+* I can view an existing Order by entering my Order Id on the home page in the text field beneath the words Order Number 
+* I can delete/cancel an Order by clicking "Cancel Order" on the Order confirmation page
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Acheiving CRUD
 
-### `npm run build`
+* C - Creating new Orders
+* R - Showing a New Order once it is created OR showing an existing order once a user inputs the Order Id
+* U - Updating/Modifying a Driver's availability when assigning them to an Order (when the Order is created) OR Updating/Modifying a Driver's availability when an Order is canceled
+* D - Canceling an order
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation Instructions
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Back End
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can find the back end of this app [here](https://github.com/tishana/PickUpAppAPI) .
 
-### `npm run eject`
+### Front End
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone this repository.
+2. Change to the directory containing this file.
+3. Run NPM Install
+4. Open your text editor
+5. Run NPM Start to view in web browser
+6. See link above for instructions on launching the back end
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+git clone git@github.com:donellellis/PickUpApp.git
+cd PickUpApp
+npm install
+code .
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+``` 
+ 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/). -->
