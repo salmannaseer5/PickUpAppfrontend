@@ -26,9 +26,7 @@
     margin-bottom: 5px;
 }
 h2{
-    font-family: sans-serif;
     animation: inherit;
-  
   }
   
   .form-control {
@@ -92,6 +90,14 @@ h2{
         display: inline-block;
         width: auto;
         vertical-align: middle;
+        
+      }
+
+      .form-inline {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        padding: 0px 40px 0px 40px;
+        
       }
       
     }

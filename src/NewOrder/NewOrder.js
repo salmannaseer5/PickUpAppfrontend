@@ -78,13 +78,13 @@ class NewOrder extends Component {
     return (
         <div className="neworder-div">
         <form className="form-inline" onSubmit={this.handleSubmit}>
-            <h1>New Order</h1>
+            <h1>new order</h1>
             <div className="newOrder">
             <div className="orderInput">
             <input className="form-control" type="text" value={this.state.name} onChange={this.handleNameChange} placeholder="Name" />
             </div>
             <div className="orderInput">
-            <input className="form-control" type="text" value={this.state.email} onChange={this.handleEmailChange} placeholder="email" />
+            <input className="form-control" type="text" value={this.state.email} onChange={this.handleEmailChange} placeholder="Email" />
             </div>
             <div className="orderInput">
             <input className="form-control" type="text" value={this.state.pickUpAddress} onChange={this.handlePickUpAddressChange} placeholder="Pickup Address" />

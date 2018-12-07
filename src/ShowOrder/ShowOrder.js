@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
+import './ShowOrder.css'
 
 // defines environmental variables DE
 const backendBaseUrl = (process.env.NODE_ENV === "development") ? process.env.REACT_APP_DEVELOPMENT : process.env.REACT_APP_PRODUCTION
@@ -49,15 +50,18 @@ class ShowOrder extends Component {
         if(typeof order != "undefined"){
             return (    
                 
-                <div>
+                <div className="show">
                     <h1>Thank you for yor order, {order.name}!</h1>
-                    <h2>Confirmation Number: {order._id}</h2>
-                    <h2>Pickup Address: {order.pickUpAddress}</h2>
-                    <h2>Dropoff Address: {order.dropOffAddress}</h2>
-                    <h2>Pickup Time: {order.time}</h2>
-                    <h3>A confirmation email will be sent to {order.email}</h3>
+                    <h3>Confirmation Number</h3>
+                    <h2>{order._id}</h2>
+                    <h3>Pickup Address</h3>
+                    <h2>{order.pickUpAddress}</h2>
+                    <h3>Dropoff Address </h3>
+                    <h2>{order.dropOffAddress}</h2>
+                    <h3>Pickup Time</h3>
+                    <h2>{order.time}</h2>
                     <form onSubmit={this.handleDeleteOrder}>
-                        <input type="submit" value="cancel order"></input>
+                        <input className="btn" type="submit" value="cancel order"></input>
                     </form>
                 </div>
             );
