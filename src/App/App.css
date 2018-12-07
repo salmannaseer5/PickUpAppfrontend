@@ -38,7 +38,7 @@
     align-items: center;
     padding: 0 20px;
     flex-wrap: wrap;
-    border-bottom: 10px solid white 
+    border-radius: 10px 10px 10px 10px;
   }
   
   nav img {
@@ -75,4 +75,15 @@
     display: flex;
     justify-content: end;
     text-align: right;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+margin: 2px 2px 2px 2px;
+  }
+
+  
+  footer {
+    margin-top: 8%;
+   text-align: center;
   }

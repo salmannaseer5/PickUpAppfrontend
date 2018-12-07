@@ -1,0 +1,16 @@
+h1 {
+    font-family: Cambria;
+    font-weight: bold;
+    font-style: initial;
+    color: rgb(28, 29, 31);
+    font-size: 35px;
+}
+.about-container {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+p{
+    text-align: left;
+    font-size: 18px
+}
