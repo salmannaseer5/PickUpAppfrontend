@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
 
+// defines environmental variables DE
+const backendBaseUrl = (process.env.NODE_ENV === "development") ? process.env.REACT_APP_DEVELOPMENT : process.env.REACT_APP_PRODUCTION
 
-
-const backendBaseUrl = 'http://localhost:8000';
-// const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
 const postEndpoint = '/api/orders';
 
 class ShowOrder extends Component {
