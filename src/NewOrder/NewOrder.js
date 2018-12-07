@@ -5,6 +5,7 @@ import { Redirect } from 'react-router'
 
 // constants
 const backendBaseUrl = 'http://localhost:8000';
+// const backendBaseUrl = 'https://pickupapp-api.herokuapp.com';
 const postEndpoint = '/api/orders';
 
 class NewOrder extends Component {
@@ -49,7 +50,7 @@ class NewOrder extends Component {
     }
 
     handleSubmit(event) {
-        alert('Thank you for your order ' + this.state.name + '!');
+
         // Send a POST request
         axios({
             method: 'post',

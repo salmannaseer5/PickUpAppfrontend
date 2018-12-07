@@ -4,7 +4,7 @@ import './App.css'
 import Home from '../Home/Home.js';
 import ShowOrder from '../ShowOrder/ShowOrder.js';
 import About from '../About/About'
-
+import Delete from '../Delete/Delete.js'
 
 class App extends Component {
   render() {
@@ -12,16 +12,18 @@ class App extends Component {
       <div>
       <nav>
       <Link className="home-app" to="/">PickUp App</Link>
-      <Link className="about-page" to="/About">About</Link>
+      <Link className="about-page" to="/about">About</Link>
       </nav>
       <main>
         <Switch>
-          <Route  path="/" exact
+          <Route  exact path="/"
                   component={Home}/>
-          <Route  path="/order/:id" 
+          <Route  exact path="/order/:id" 
                   component={ShowOrder}/>
-          <Route  path="/About" 
+          <Route  exact path="/about" 
                   component={About}/>
+          <Route exact path="/confirm" 
+                  component={Delete}/>
         </Switch>
       </main>
       </div>

@@ -1,5 +1,8 @@
 .neworder-div{
-    margin-left: 20%;
+    margin-left: 30%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: flex-start;
 }
   .placeOrder {
     display: inline-block;
