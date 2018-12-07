@@ -20,21 +20,8 @@ class ShowOrder extends Component {
     }
 
     handleDeleteOrder = event => {
-        console.log('delete')
+        this.setState({redirect: true})
         axios.delete(backendBaseUrl + postEndpoint + "/" + this.props.match.params.id)
-        .then(() =>{
-            console.log('delete fun ction')
-            this.setState({redirect: true})
-
-        })
-
-        //   .then(res => {
-        //     console.log(res);
-        //     console.log(res.data);
-        //   })
-        
-        // .catch(function (error) {console.log(error)})
-        // event.preventDefault();
     }
 
 
