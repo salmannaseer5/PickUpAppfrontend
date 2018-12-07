@@ -1,6 +1,7 @@
 .searchOrder-div {
 display: flex;
 justify-content: flex-end;
+margin-right: 30%;
 }
 h2{
   font-family: sans-serif;

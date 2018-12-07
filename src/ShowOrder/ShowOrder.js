@@ -60,7 +60,6 @@ class ShowOrder extends Component {
                         <input type="submit" value="cancel order"></input>
                     </form>
                 </div>
-    
             );
           } else {
               return (
