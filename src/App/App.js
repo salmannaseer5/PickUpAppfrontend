@@ -40,9 +40,7 @@ class App extends Component {
           <a href="www.instagram.com" className="ins-ic">Pinterest  </a> ||
         </div>
       </div>
-
     </div>
-
   </div>
   <div className="footer-copyright text-center py-3">© 2018 Copyright:
     <a href="https://http://pickupapp.surge.sh">www.http://pickupapp.surge.sh.com</a>
