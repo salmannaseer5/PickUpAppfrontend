@@ -51,7 +51,7 @@ class ShowOrder extends Component {
             return (    
                 
                 <div className="show">
-                    <h1>Thank you for yor order, {order.name}!</h1>
+                    <h1>Thank you for your order, {order.name}!</h1>
                     <h3>Confirmation Number</h3>
                     <h2>{order._id}</h2>
                     <h3>Pickup Address</h3>
