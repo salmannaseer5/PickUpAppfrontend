@@ -4,13 +4,16 @@ import { Redirect } from 'react-router';
 import './ShowOrder.css'
 
 // defines environmental variables DE
-const backendBaseUrl = (process.env.NODE_ENV === "development") ? process.env.REACT_APP_DEVELOPMENT : process.env.REACT_APP_PRODUCTION
+// const backendBaseUrl = (process.env.NODE_ENV === "development") ? process.env.REACT_APP_DEVELOPMENT : process.env.REACT_APP_PRODUCTION
+
+const backendBaseUrl = "http://localhost:8000"
+
 
 const postEndpoint = '/api/orders';
 
 class ShowOrder extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             orderArray: [],
@@ -21,19 +24,19 @@ class ShowOrder extends Component {
     }
 
     handleDeleteOrder = event => {
-        this.setState({redirect: true})
+        this.setState({ redirect: true })
         axios.delete(backendBaseUrl + postEndpoint + "/" + this.props.match.params.id)
     }
 
 
 
-    componentDidMount(){
+    componentDidMount() {
 
         axios({
-            method:'get',
+            method: 'get',
             url: backendBaseUrl + postEndpoint
-            })
-            .then((orderArray) => this.setState({orderArray: orderArray.data}))
+        })
+            .then((orderArray) => this.setState({ orderArray: orderArray.data }))
     }
 
     render() {
@@ -44,12 +47,12 @@ class ShowOrder extends Component {
         }
 
         let orderList = this.state.orderArray
-        let orderResult = orderList.filter( order => order._id === this.props.match.params.id)
+        let orderResult = orderList.filter(order => order._id === this.props.match.params.id)
         let order = orderResult[0]
 
-        if(typeof order != "undefined"){
-            return (    
-                
+        if (typeof order != "undefined") {
+            return (
+
                 <div className="show">
                     <h1>Thank you for your order, {order.name}!</h1>
                     <h3>Confirmation Number</h3>
@@ -65,12 +68,12 @@ class ShowOrder extends Component {
                     </form>
                 </div>
             );
-          } else {
-              return (
-                 <h2>Order empty</h2>
-              )
-            } 
-            
+        } else {
+            return (
+                <h2>Order empty</h2>
+            )
+        }
+
     }
 
 }

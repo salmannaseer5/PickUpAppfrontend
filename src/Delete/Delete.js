@@ -5,7 +5,8 @@ class Delete extends Component {
   render() {
     return (
       <div className="delete-container">
-        <h2>Your order has been deleted</h2>
+        <h2>Your order has been canceled</h2>
+        <h3>Sorry to see you go...</h3>
       </div>
     );
   }
